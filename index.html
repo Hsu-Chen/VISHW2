@@ -14,7 +14,7 @@
 }
 
 </style>
-<svg width="960" height="500"></svg>
+<svg width="1160" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -75,7 +75,7 @@ var context = svg.append("g")
 d3.csv("index.csv", function(error, data) {
   if (error) throw error;
   console.log(data);
-  x.domain([0.1805]);
+  x.domain([d3.extent(data, function(d) { return d.time; })]);
   y.domain([0, 2000]);
   x2.domain(x.domain());
   y2.domain(y.domain());
