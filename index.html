@@ -45,10 +45,10 @@
 </head>
 
 <body>
-<h3>2018美金買入匯率變化表(1/1~4/13)</h3>
+<h3>2018美金買入賣出匯率變化表(1/1~4/13)</h3>
 <div id="button-container">
-    <button id="gain" class="button button2">國民所得</button>
-    <button id="pay" class="button button2">平均消費</button>
+    <button id="gain" class="button button2">賣出</button>
+    <button id="pay" class="button button2">買入</button>
 </div>
 <svg width="960" height="520"></svg>
 <h3>資料來源：台灣銀行-歷史本行營業時間牌告匯率</h3>
@@ -130,6 +130,8 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
       .attr("d", area);
 
   focus.append("g")
+      .transition()
+      .duration(700)
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
@@ -144,6 +146,8 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
       .attr("d", area2);
 
   context.append("g")
+      .transition()
+      .duration(700)
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height2 + ")")
       .call(xAxis2);
@@ -154,6 +158,8 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
       .call(brush.move, x.range());
 
   svg.append("rect")
+      .transition()
+      .duration(700)
       .attr("class", "zoom")
       .attr("width", width)
       .attr("height", height)
