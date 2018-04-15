@@ -74,7 +74,7 @@ var xAxis = d3.axisBottom(x),
     xAxis2 = d3.axisBottom(x2),
     yAxis = d3.axisLeft(y);
 
-/*var brush = d3.brushX()
+var brush = d3.brushX()
     .extent([[0, 0], [width, height2]])
     .on("brush end", brushed);
 
@@ -95,7 +95,7 @@ var area2 = d3.area()
     .x(function(d) { return x2(d.time); })
     .y0(height2);
     //.y1(function(d) { return y2(d.number); });
-*/
+
 svg.append("defs").append("clipPath")
     .attr("id", "clip")
   .append("rect")
@@ -116,27 +116,6 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
   d3.selectAll('#button-container > button').on('click', function(){
     var chartType = d3.select(this).attr('id');
     
-    var brush = d3.brushX()
-    .extent([[0, 0], [width, height2]])
-    .on("brush end", brushed);
-
-    var zoom = d3.zoom()
-    .scaleExtent([1, Infinity])
-    .translateExtent([[0, 0], [width, height]])
-    .extent([[0, 0], [width, height]])
-    .on("zoom", zoomed);
-
-    var area = d3.area()
-    .curve(d3.curveMonotoneX)
-    .x(function(d) { return x(d.time); })
-    .y0(height);
-    //.y1(function(d) { return y(d.number); });
-
-    var area2 = d3.area()
-    .curve(d3.curveMonotoneX)
-    .x(function(d) { return x2(d.time); })
-    .y0(height2);
-    //.y1(function(d) { return y2(d.number); });
     
     if(chartType === "gain"){area.y1(function(d) { return y(d.number); });area2.y1(function(d) { return y2(d.number); });}
     else if(chartType === "pay"){area.y1(function(d) { return y(d.sell); });area2.y1(function(d) { return y2(d.sell); });}
