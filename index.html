@@ -25,7 +25,7 @@ var svg = d3.select("svg"),
     height = +svg.attr("height") - margin.top - margin.bottom,
     height2 = +svg.attr("height") - margin2.top - margin2.bottom;
 
-var parseDate = d3.timeParse("%b %Y");
+var parseDate = d3.timeParse("%Y/%m/%d");
 
 var x = d3.scaleTime().range([0, width]),
     x2 = d3.scaleTime().range([0, width]),
@@ -72,9 +72,9 @@ var context = svg.append("g")
     .attr("class", "context")
     .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
+d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", type, function(error, data) {
   if (error) throw error;
-  
+
   x.domain(d3.extent(data, function(d) { return d.time; }));
   y.domain([28, 30]);
   x2.domain(x.domain());
@@ -137,10 +137,10 @@ function zoomed() {
   context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
 }
 
-/*function type(d) {
+function type(d) {
   d.date = parseDate(d.date);
   d.price = +d.price;
   return d;
-}*/
+}
 
 </script>
