@@ -125,10 +125,15 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
       .call(zoom);
 
   svg.append("text")             
-        .attr("x", 850)
-        .attr("y", 380)
+        .attr("x", 1000)
+        .attr("y", 430)
         .style("text-anchor", "middle")
-        .text("民國");
+        .text("Days");
+  svg.append("text")             
+        .attr("x", 40)
+        .attr("y", 30)
+        .style("text-anchor", "middle")
+        .text("元");
 });
 //console.log(area);
 function brushed() {
