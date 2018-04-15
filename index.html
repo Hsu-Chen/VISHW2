@@ -123,6 +123,12 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom);
+
+  svg.append("text")             
+        .attr("x", 850)
+        .attr("y", 380)
+        .style("text-anchor", "middle")
+        .text("民國");
 });
 //console.log(area);
 function brushed() {
