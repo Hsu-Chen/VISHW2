@@ -124,7 +124,7 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom);
 });
-console.log(area);
+//console.log(area);
 function brushed() {
   if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
   var s = d3.event.selection || x2.range();
