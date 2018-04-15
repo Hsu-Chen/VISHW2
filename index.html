@@ -81,9 +81,9 @@ var context = svg.append("g")
 
 d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
   if (error) throw error;
-
+  console.log(x.range);
   x.domain(d3.extent(data, function(d) { return d.time; }));
-  console.log(x.domain());
+  console.log(x.domain);
   y.domain([28, 30]);
   x2.domain(x.domain());
   y2.domain(y.domain());
