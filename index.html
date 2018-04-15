@@ -34,7 +34,7 @@ var svg = d3.select("svg"),
 
 //var parseDate = d3.timeParse("%Y/%m/%d");
 
-var x = d3.scaleTime().range([0, width]),
+var x = d3.scaleTime().range([0, width*10]),
     x2 = d3.scaleTime().range([0, width]),
     y = d3.scaleLinear().range([height, 0]),
     y2 = d3.scaleLinear().range([height2, 0]);
