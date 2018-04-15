@@ -21,7 +21,7 @@
 <body>
 <h3>2018美金買入匯率變化表</h3>
 <svg width="960" height="500"></svg>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
 <script>
 
@@ -34,8 +34,8 @@ var svg = d3.select("svg"),
 
 //var parseDate = d3.timeParse("%Y/%m/%d");
 
-var x = d3.scale.linear().range([0, 100]),
-    x2 = d3.scale.linear().range([0, 100]),
+var x = d3.scaleLinear().range([0, 1000]),
+    x2 = d3.scaleLinear().range([0, 1000]),
     y = d3.scaleLinear().range([height, 0]),
     y2 = d3.scaleLinear().range([height2, 0]);
 
