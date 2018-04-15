@@ -34,7 +34,7 @@ var svg = d3.select("svg"),
 
 //var parseDate = d3.timeParse("%Y/%m/%d");
 
-var x = d3.scaleTime().range([0, width*10]),
+var x = d3.scaleTime().range([0, width]),
     x2 = d3.scaleTime().range([0, width]),
     y = d3.scaleLinear().range([height, 0]),
     y2 = d3.scaleLinear().range([height2, 0]);
@@ -83,6 +83,7 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
   if (error) throw error;
 
   x.domain(d3.extent(data, function(d) { return d.time; }));
+  console.log(x.domain());
   y.domain([28, 30]);
   x2.domain(x.domain());
   y2.domain(y.domain());
