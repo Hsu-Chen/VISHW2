@@ -115,8 +115,8 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
 
   d3.selectAll('#button-container > button').on('click', function(){
     var chartType = d3.select(this).attr('id');
-    if(chartType === "gain"){area.y1(function(d) { return y(d.number); });}
-    else if(chartType === "pay"){area2.y1(function(d) { return y2(d.sell); });}
+    if(chartType === "gain"){area.y1(function(d) { return y(d.number); });area2.y1(function(d) { return y2(d.number); });}
+    else if(chartType === "pay"){area.y1(function(d) { return y(d.sell); });area2.y1(function(d) { return y2(d.sell); });}
 
   x.domain([1,67]);
   console.log(x.domain());
