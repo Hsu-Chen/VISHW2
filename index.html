@@ -87,14 +87,14 @@ var zoom = d3.zoom()
 var area = d3.area()
     .curve(d3.curveMonotoneX)
     .x(function(d) { return x(d.time); })
-    .y0(height)
-    .y1(function(d) { return y(d.number); });
+    .y0(height);
+    //.y1(function(d) { return y(d.number); });
 
 var area2 = d3.area()
     .curve(d3.curveMonotoneX)
     .x(function(d) { return x2(d.time); })
-    .y0(height2)
-    .y1(function(d) { return y2(d.number); });
+    .y0(height2);
+    //.y1(function(d) { return y2(d.number); });
 
 svg.append("defs").append("clipPath")
     .attr("id", "clip")
