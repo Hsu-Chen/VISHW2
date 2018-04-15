@@ -102,21 +102,28 @@ svg.append("defs").append("clipPath")
     .attr("width", width)
     .attr("height", height);
 
-var focus = svg.append("g")
+/*var focus = svg.append("g")
     .attr("class", "focus")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var context = svg.append("g")
     .attr("class", "context")
     .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
-
+*/
 d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
   if (error) throw error;
 
   d3.selectAll('#button-container > button').on('click', function(){
     var chartType = d3.select(this).attr('id');
     
-    
+    var focus = svg.append("g")
+    .attr("class", "focus")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var context = svg.append("g")
+    .attr("class", "context")
+    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+
     if(chartType === "gain"){area.y1(function(d) { return y(d.number); });area2.y1(function(d) { return y2(d.number); });}
     else if(chartType === "pay"){area.y1(function(d) { return y(d.sell); });area2.y1(function(d) { return y2(d.sell); });}
 
