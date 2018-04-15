@@ -20,7 +20,7 @@
 
 <body>
 <h3>2018美金買入匯率變化表</h3>
-<svg width="1260" height="500"></svg>
+<svg width="960" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 <script>
@@ -85,6 +85,7 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
   x.domain(d3.extent(data, function(d) { return d.time; }));
   console.log(x.domain());
   y.domain([28, 30]);
+  console.log(y.domain());
   x2.domain(x.domain());
   y2.domain(y.domain());
 
