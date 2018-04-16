@@ -136,10 +136,12 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
   focus.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
+      .attr("name", "a")      
       .call(xAxis);
 
   focus.append("g")
       .attr("class", "axis axis--y")
+      .attr("name", "a")      
       .call(yAxis);
 
   context.append("path")
