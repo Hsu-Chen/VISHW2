@@ -165,10 +165,8 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
         .attr("y", 30)
         .style("text-anchor", "middle")
         .text("元");
-
-});
-
-d3.selectAll('#button-container > button').on('click', function(){
+    
+    d3.selectAll('#button-container > button').on('click', function(){
     var chartType = d3.select(this).attr('id');
     if(chartType === "gain"){area.y1(function(d) { return y(d.number); });area2.y1(function(d) { return y2(d.number); });}
     else if(chartType === "pay"){area.y1(function(d) { return y(d.sell); });area2.y1(function(d) { return y2(d.sell); });}
@@ -176,7 +174,11 @@ d3.selectAll('#button-container > button').on('click', function(){
       .attr("d", area)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    });
+
 });
+
+
 //console.log(area);
 function brushed() {
   if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
