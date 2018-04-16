@@ -118,6 +118,8 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
     
     d3.selectAll(".area").filter(function(e){return d3.select(this).attr("name") == "a"}).remove();  
     d3.selectAll(".area").filter(function(e){return d3.select(this).attr("name") == "b"}).remove();  
+    d3.selectAll(".area").filter(function(e){return d3.select(this).attr("name") == "c"}).remove();  
+    d3.selectAll(".area").filter(function(e){return d3.select(this).attr("name") == "d"}).remove();  
     
     if(chartType === "gain"){area.y1(function(d) { return y(d.number); });area2.y1(function(d) { return y2(d.number); });}
     else if(chartType === "pay"){area.y1(function(d) { return y(d.sell); });area2.y1(function(d) { return y2(d.sell); });}
@@ -136,12 +138,12 @@ d3.csv("https://hsu-chen.github.io/VISHW2/index.csv", function(error, data) {
   focus.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
-      .attr("name", "a")      
+      .attr("name", "c")      
       .call(xAxis);
 
   focus.append("g")
       .attr("class", "axis axis--y")
-      .attr("name", "a")      
+      .attr("name", "d")      
       .call(yAxis);
 
   context.append("path")
